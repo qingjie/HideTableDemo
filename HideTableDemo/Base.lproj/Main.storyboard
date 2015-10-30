@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aai-Ca-lLx">
+                                <rect key="frame" x="0.0" y="50" width="600" height="170"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="X5l-Sn-vIM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="MO8-pg-5zW"/>
+                                </connections>
+                            </webView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rEr-gG-MWW">
+                                <rect key="frame" x="0.0" y="220" width="600" height="170"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="vom-yL-wOH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CHs-zf-eFN"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm9-Bc-PkK">
+                                <rect key="frame" x="285" y="20" width="30" height="30"/>
+                                <state key="normal" image="Arrow-Down"/>
+                                <connections>
+                                    <action selector="btnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oCc-xj-nQ5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wm9-Bc-PkK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2s0-CL-BUl"/>
+                            <constraint firstItem="rEr-gG-MWW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ha4-Lc-HES"/>
+                            <constraint firstItem="Wm9-Bc-PkK" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="J1b-67-yGL"/>
+                            <constraint firstItem="aai-Ca-lLx" firstAttribute="top" secondItem="Wm9-Bc-PkK" secondAttribute="bottom" id="UsZ-0y-Vtx"/>
+                            <constraint firstItem="aai-Ca-lLx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="YzJ-ab-Pdq"/>
+                            <constraint firstItem="rEr-gG-MWW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ajd-VO-UVQ"/>
+                            <constraint firstItem="Wm9-Bc-PkK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="bVA-4Q-947"/>
+                            <constraint firstItem="aai-Ca-lLx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="f3s-bL-hzI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rEr-gG-MWW" secondAttribute="bottom" constant="210" id="fHM-O4-RkC"/>
+                            <constraint firstItem="rEr-gG-MWW" firstAttribute="top" secondItem="aai-Ca-lLx" secondAttribute="bottom" id="gSO-7B-YcK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aai-Ca-lLx" secondAttribute="trailing" constant="-20" id="ukE-ku-HVl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn" destination="Wm9-Bc-PkK" id="8Fx-Zx-d2M"/>
+                        <outlet property="tbView" destination="rEr-gG-MWW" id="Kt1-mz-Ar5"/>
+                        <outlet property="webView" destination="aai-Ca-lLx" id="l1m-VL-V9R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="429"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Arrow-Down" width="30" height="30"/>
+    </resources>
+</document>
